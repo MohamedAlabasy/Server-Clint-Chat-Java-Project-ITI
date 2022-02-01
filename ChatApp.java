@@ -19,7 +19,10 @@ public class ChatApp extends JFrame implements Runnable {
 	private PrintWriter outputStream;
 	private Scanner inputStream;
 	private int port = 7777;
-	JTextArea ta;
+	private JTextArea ta;
+	private JScrollPane scroll;
+	private JTextField tf;
+	private JButton okButton;
 
 	public ChatApp() throws IOException {
 		String str = "127.128.0.1";
@@ -48,9 +51,9 @@ public class ChatApp extends JFrame implements Runnable {
 
 		this.setLayout(new FlowLayout());
 		ta = new JTextArea(20, 50);
-		JScrollPane scroll = new JScrollPane(ta);
-		JTextField tf = new JTextField(40);
-		JButton okButton = new JButton("Send");
+		scroll = new JScrollPane(ta);
+		tf = new JTextField(40);
+		okButton = new JButton("Send");
 
 		okButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
